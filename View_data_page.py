@@ -4,7 +4,7 @@ View_data_page.py
 
 import streamlit as st
 import pandas as pd
-
+from pathlib import Path  # 必须添加，否则 Path 未定义 
 
 def View_data_file():
     st.markdown('<span class="arrow">➤ View data</span> <p class="font"></p>', unsafe_allow_html=True)
@@ -36,4 +36,5 @@ def View_data_file():
         st.info(" 请检查数据文件夹名称和Excel文件名是否正确，且已上传到项目根目录。") 
     except Exception as e: 
         st.error(f" 读取文件时出错：{e}") 
+
 
