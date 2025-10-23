@@ -9,7 +9,10 @@ from PIL import Image
 
 def Home_file():
     st.markdown('<span class="arrow">➤ Homepage</span> <p class="font"></p>', unsafe_allow_html=True)
-    image = Image.open(r'Pertussis data consolidation/pertussis.png')
+    current_dir = Path(__file__).parent
+    
+    image_path = current_dir / "Pertussis data consolidation" / "pertussis.png"  
+    image = Image.open(image_path) 
     col1, col2 = st.columns([1, 2])
     
     with col1:
@@ -97,3 +100,4 @@ def Home_file():
 
 if __name__ == "__main__":
     Home_file()
+
