@@ -10,7 +10,7 @@ def View_data_file():
     st.markdown('<span class="arrow">➤ View data</span> <p class="font"></p>', unsafe_allow_html=True)
     tab1, tab2, tab3 = st.tabs(["📖 Positive & Negative & Health", "🗃 Positive & Negative", "📑 Positive & Health"])
     current_dir = Path(__file__).parent 
-    data_folder = current_dir / "Pertussis data consolidation"  
+    data_folder = current_dir
     
 
     try: 
@@ -31,3 +31,4 @@ def View_data_file():
         st.info(" 请检查数据文件夹名称和Excel文件名是否正确，且已上传到项目根目录。") 
     except Exception as e: 
         st.error(f" 读取文件时出错：{e}") 
+
