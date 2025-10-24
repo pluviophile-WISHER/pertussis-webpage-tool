@@ -9,26 +9,17 @@ from pathlib import Path
 def View_data_file():
     st.markdown('<span class="arrow">➤ View data</span> <p class="font"></p>', unsafe_allow_html=True)
     tab1, tab2, tab3 = st.tabs(["📖 Positive & Negative & Health", "🗃 Positive & Negative", "📑 Positive & Health"])
-    # 使用相对于项目根目录的路径 
-    data_folder = Path("Pertussis data consolidation")  # 假设你把Excel文件放在项目根目录下的data文件夹中 
+    path_PNH = r'Pertussis data consolidation/positive, negative, physical examination.xlsx'  
+    data_PNH = pd.read_excel(path_PNH)
+    tab1.dataframe(data_PNH, width=1400, height=710) 
+
+    path_PN = r'Pertussis data consolidation/positive and negative.xlsx'
+    data_PN = pd.read_excel(path_PN)
+    tab2.dataframe(data_PN, width=1400, height=710)
     
-    try: 
-        path_PNH = data_folder / "positive, negative, physical examination.xlsx"   
-        data_PNH = pd.read_excel(path_PNH)   
-        tab1.dataframe(data_PNH,  width=1400, height=710) 
-        
-        path_PN = data_folder / "positive and negative.xlsx"   
-        data_PN = pd.read_excel(path_PN)   
-        tab2.dataframe(data_PN,  width=1400, height=710) 
-        
-        path_PH = data_folder / "positive and physical examination.xlsx"   
-        data_PH = pd.read_excel(path_PH)   
-        tab3.dataframe(data_PH,  width=1400, height=710) 
-        
-    except FileNotFoundError as e: 
-        st.error(f" 文件未找到：{e}") 
-        st.info(" 请检查数据文件夹名称和Excel文件名是否正确，且已上传到项目根目录。") 
-    except Exception as e: 
-        st.error(f" 读取文件时出错：{e}")
+    path_PH = r'Pertussis data consolidation/positive and physical examination.xlsx'
+    data_PH = pd.read_excel(path_PH)
+    tab3.dataframe(data_PH, width=1400, height=710)
+
 
 
