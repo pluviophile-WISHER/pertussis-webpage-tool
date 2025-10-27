@@ -10,26 +10,7 @@ from pathlib import Path
 import os
 import pkg_resources
 
-def load_model(model_path):
-    try:
-        # 检查路径是否存在 
-        if not Path(model_path).exists():
-            st.error(f" 模型文件未找到于: {model_path}")
-            return None 
-        
-        # 检查文件是否可读 
-        if not os.access(model_path,  os.R_OK):
-            st.error(f" 没有权限读取模型文件: {model_path}")
-            return None
-            
-        # 尝试加载模型 
-        model = load(model_path)
-        st.success(" 模型加载成功")
-        return model
-        
-    except Exception as e:
-        st.error(f" 加载模型失败: {str(e)}")
-        return None
+
 
 def Add_data_file():
     st.markdown('<span class="arrow">➤ Add data</span> <p class="font"></p>', unsafe_allow_html=True)
@@ -504,6 +485,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
