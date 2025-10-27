@@ -7,7 +7,6 @@ from streamlit_option_menu import option_menu
 import pandas as pd
 from joblib import load
 from pathlib import Path
-import pkg_resources
 import os
 
 def load_model(model_path):
@@ -504,6 +503,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
