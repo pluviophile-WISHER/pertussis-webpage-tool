@@ -6,7 +6,8 @@ streamlit==1.37.1
 streamlit_option_menu==0.4.0
 openpyxl==3.1.5
 scikit-learn==1.7.2
-catboost>=1.2  # 使用支持 Python 3.13 的最新稳定版
+catboost>=1.2
 xgboost==2.1.4
 #pyarrow>=14.0.2,<15.0.0 
-setuptools>=68.0.0
+#setuptools>=68.0.0
+
