@@ -9,7 +9,8 @@ scikit-learn==1.7.2
 catboost>=1.2  # 使用支持 Python 3.13 的最新稳定版
 xgboost==1.5.2
 #pyarrow>=14.0.2,<15.0.0 
-setuptools==80.7.1 
+setuptools>=68.0.0
+
 
 
 
