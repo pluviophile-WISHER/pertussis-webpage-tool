@@ -108,9 +108,8 @@ def Add_data_file():
         if st.session_state.show_data:
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
             
-        current_dir = Path(__file__).parent
         try:
-            model_path = current_dir / "Pertussis data consolidation" / "PN_CatBoost_model.joblib"  
+            model_path = r"Pertussis data consolidation/PN_CatBoost_model.joblib"  
             model = load(model_path)
         except Exception as e:
             model = None
@@ -123,9 +122,8 @@ def Add_data_file():
             input_data = [user_input]
             prediction = model.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Negative)"
-            current_dir = Path(__file__).parent
             try:
-                PN_path = current_dir / "Pertussis data consolidation" / "PN.parquet"
+                PN_path =r"Pertussis data consolidation/PN.parquet"
                 merged_df = pd.read_parquet(PN_path) 
             except Exception as e:
                 merged_df = pd.DataFrame()
@@ -340,9 +338,8 @@ def Add_data_file():
         if st.session_state.show_data:
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
                     
-        current_dir = Path(__file__).parent
         try:
-            model_path = current_dir / "Pertussis data consolidation" / "PH_XGBoost_model.joblib"  
+            model_path = r"Pertussis data consolidation/PH_XGBoost_model.joblib"  
             model = load(model_path)
         except Exception as e:
             model = None 
@@ -358,9 +355,8 @@ def Add_data_file():
             input_data = [user_input] 
             prediction = model.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Health)"
-            current_dir = Path(__file__).parent
             try:
-                PH_path = current_dir / "Pertussis data consolidation" / "PH.parquet"
+                PH_path = r"Pertussis data consolidation/PH.parquet"
                 merged_df = pd.read_parquet(PH_path)
             except Exception as e:
                 merged_df = pd.DataFrame()
@@ -485,4 +481,5 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
