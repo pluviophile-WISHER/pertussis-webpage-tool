@@ -10,7 +10,7 @@ def View_data_file():
     st.markdown('<span class="arrow">➤ View data</span> <p class="font"></p>', unsafe_allow_html=True)
     tab1, tab2, tab3 = st.tabs(["📖 Positive & Negative & Health", "🗃 Positive & Negative", "📑 Positive & Health"])
     # 定义固定文件路径（请根据实际情况修改这些路径）
-    fixed_path_PNH = r'Pertussis data consolidation/positive, negative, physical examination.xlsx' 
+    fixed_path_PNH = r'Pertussis data consolidation/Positive, negative, physical examination.xlsx' 
     fixed_path_PN = r'Pertussis data consolidation/positive and negative.xlsx' 
     fixed_path_PH = r'Pertussis data consolidation/positive and physical examination.xlsx' 
  
@@ -47,6 +47,7 @@ def View_data_file():
  
     except Exception as e:
         st.error(f" 初始化页面时发生错误: {str(e)}")
+
 
 
 
