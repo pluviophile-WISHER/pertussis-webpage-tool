@@ -362,7 +362,7 @@ def Add_data_file():
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
                     
         try:
-            model_path_PH = r"Pertussis data consolidation/PH_XGBoost_model.joblib"  
+            model_path_PH = r"Pertussis data consolidation/PH_XGBoost_model1.joblib"  
             model_PH = load_model(model_path_PH)
         except Exception as e:
             model_PH = None 
@@ -504,6 +504,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
