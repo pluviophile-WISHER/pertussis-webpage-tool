@@ -75,16 +75,16 @@ def Add_data_file():
         st.markdown("""
         <style>
             .dataframe {
-                border: 2px solid black; /* 加粗外框 */
+                border: 2px solid black;
                 border-collapse: collapse;
-                width: 100%; /* 表格宽度 */
+                width: 100%;
             }
             .dataframe th, .dataframe td {
-                text-align: center; /* 数据居中 */
-                padding: 8px; /* 内边距 */
+                text-align: center;
+                padding: 8px;
             }
             .dataframe tr:nth-child(even) {
-                background-color: #f2f2f2; /* 白灰相间 */
+                background-color: #f2f2f2;
             }
         </style>
         """, unsafe_allow_html=True)
@@ -305,16 +305,16 @@ def Add_data_file():
         st.markdown("""
         <style>
             .dataframe {
-                border: 2px solid black; /* 加粗外框 */
+                border: 2px solid black;
                 border-collapse: collapse;
-                width: 100%; /* 表格宽度 */
+                width: 100%;
             }
             .dataframe th, .dataframe td {
-                text-align: center; /* 数据居中 */
-                padding: 8px; /* 内边距 */
+                text-align: center;
+                padding: 8px; 
             }
             .dataframe tr:nth-child(even) {
-                background-color: #f2f2f2; /* 白灰相间 */
+                background-color: #f2f2f2;
             }
         </style>
         """, unsafe_allow_html=True)
@@ -482,6 +482,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
