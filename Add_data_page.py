@@ -340,7 +340,7 @@ def Add_data_file():
                     
         try:
             model_path_PH = r"Pertussis data consolidation/XGBoost_model.joblib"  
-            model_PH = joblib.load(model_path_PH)
+            model_PH = load(model_path_PH)
         except Exception as e:
             model_PH = None 
             st.error(f"{str(e)}")
@@ -481,6 +481,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
