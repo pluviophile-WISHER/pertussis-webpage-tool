@@ -9,6 +9,18 @@ from joblib import load
 from pathlib import Path
 import pkg_resources
 
+
+def load_model(model_path):
+    try:
+        if not Path(model_path).exists():
+            st.error(f"Model  file not found at: {model_path}")
+            return None
+        return load(model_path)
+    except Exception as e:
+        st.error(f"Failed  to load model from {model_path}: {str(e)}")
+        return None 
+
+
 def Add_data_file():
     st.markdown('<span class="arrow">➤ Add data</span> <p class="font"></p>', unsafe_allow_html=True)
     
@@ -341,7 +353,7 @@ def Add_data_file():
                     
         try:
             model_path_PH = r"Pertussis data consolidation/PH_XGBoost_model.joblib"  
-            model_PH = load(model_path_PH)
+            model_PH = load_model(model_path_PH)
         except Exception as e:
             model_PH = None 
             st.error(f"{str(e)}")
@@ -482,6 +494,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
