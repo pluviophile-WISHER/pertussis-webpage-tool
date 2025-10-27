@@ -124,8 +124,8 @@ def Add_data_file():
             prediction = model.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Negative)"
             try:
-                PN_path =r"Pertussis data consolidation/PN.parquet"
-                merged_df = pd.read_parquet(PN_path) 
+                PN_path =r"Pertussis data consolidation/PN.xlsx"
+                merged_df = pd.read_excel(PN_path) 
             except Exception as e:
                 merged_df = pd.DataFrame()
                 st.error(f"{str(e)}") 
@@ -357,8 +357,8 @@ def Add_data_file():
             prediction = model_PH.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Health)"
             try:
-                PH_path = r"Pertussis data consolidation/PH.parquet"
-                merged_df = pd.read_parquet(PH_path)
+                PH_path = r"Pertussis data consolidation/PH.xlsx"
+                merged_df = pd.read_excel(PH_path)
             except Exception as e:
                 merged_df = pd.DataFrame()
                 st.error(f"{str(e)}") 
@@ -482,7 +482,6 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
-
 
 
 
