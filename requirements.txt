@@ -10,15 +10,3 @@ catboost>=1.2  # 使用支持 Python 3.13 的最新稳定版
 xgboost==2.1.4
 #pyarrow>=14.0.2,<15.0.0 
 setuptools>=68.0.0
-
-
-
-
-
-
-
-
-
-
-
-
