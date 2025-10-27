@@ -15,38 +15,35 @@ def View_data_file():
     fixed_path_PH = r'Pertussis data consolidation/positive and physical examination.xlsx' 
  
     try:
-        # 第一个表格：Positive & Negative & Health 
-        with tab1:
-            try:
-                data_PNH = pd.read_excel(fixed_path_PNH) 
-                #st.success(f" 成功读取文件: {fixed_path_PNH}")
-                st.dataframe(data_PNH,  width=1400, height=710)
-            except Exception as e:
-                st.error(f" 读取文件失败: {fixed_path_PNH}\n错误信息: {str(e)}")
-                st.dataframe(pd.DataFrame(),  width=1400, height=710)  # 显示空表格 
+        # 读取第一个表格数据 
+        try:
+            data_PNH = pd.read_excel(fixed_path_PNH) 
+        except Exception as e:
+            st.error(f" 读取文件失败: {fixed_path_PNH}\n错误信息: {str(e)}")
+            data_PNH = pd.DataFrame()  # 创建空DataFrame 
  
-        # 第二个表格：Positive & Negative 
-        with tab2:
-            try:
-                data_PN = pd.read_excel(fixed_path_PN) 
-                #st.success(f" 成功读取文件: {fixed_path_PN}")
-                st.dataframe(data_PN,  width=1400, height=710)
-            except Exception as e:
-                st.error(f" 读取文件失败: {fixed_path_PN}\n错误信息: {str(e)}")
-                st.dataframe(pd.DataFrame(),  width=1400, height=710)  # 显示空表格 
+        # 读取第二个表格数据 
+        try:
+            data_PN = pd.read_excel(fixed_path_PN) 
+        except Exception as e:
+            st.error(f" 读取文件失败: {fixed_path_PN}\n错误信息: {str(e)}")
+            data_PN = pd.DataFrame()  # 创建空DataFrame 
  
-        # 第三个表格：Positive & Health 
-        with tab3:
-            try:
-                data_PH = pd.read_excel(fixed_path_PH) 
-                #st.success(f" 成功读取文件: {fixed_path_PH}")
-                st.dataframe(data_PH,  width=1400, height=710)
-            except Exception as e:
-                st.error(f" 读取文件失败: {fixed_path_PH}\n错误信息: {str(e)}")
-                st.dataframe(pd.DataFrame(),  width=1400, height=710)  # 显示空表格 
+        # 读取第三个表格数据 
+        try:
+            data_PH = pd.read_excel(fixed_path_PH) 
+        except Exception as e:
+            st.error(f" 读取文件失败: {fixed_path_PH}\n错误信息: {str(e)}")
+            data_PH = pd.DataFrame()  # 创建空DataFrame 
+ 
+        # 显示表格数据（按照您要求的格式）
+        tab3.dataframe(data_PH,  width=1400, height=710)
+        tab2.dataframe(data_PN,  width=1400, height=710)
+        tab1.dataframe(data_PNH,  width=1400, height=710)
  
     except Exception as e:
         st.error(f" 初始化页面时发生错误: {str(e)}")
+
 
 
 
