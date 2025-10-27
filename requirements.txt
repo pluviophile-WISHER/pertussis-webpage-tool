@@ -1,11 +1,11 @@
-streamlit==1.37.1
-streamlit_option_menu==0.4.0
-pandas==2.3.3 
-scikit-learn==1.3.2  # 降级以避免与xgboost冲突 
-xgboost==1.7.3       # 降级至稳定版 
-catboost==1.2.7
-pyarrow==14.0.1      # 固定版本避免隐式升级冲突 
-joblib==1.4.2
+streamlit==1.37.1 
+pandas==2.2.1  # 降级更稳定版本 
+scikit-learn==1.3.0 
+xgboost==1.7.3 
+catboost==1.2.2  # 降级消除潜在冲突 
+pyarrow==14.0.1 
+joblib==1.3.2 
+openpyxl==3.1.2 
+streamlit_option_menu==0.4.0 
 matplotlib==3.8.0    # 固定版本避免兼容性问题
-Pillow==10.1.0       # 更新至稳定版 
-openpyxl==3.1.5 
+Pillow==10.1.0 
