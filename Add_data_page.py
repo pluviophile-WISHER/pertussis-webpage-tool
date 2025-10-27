@@ -125,11 +125,11 @@ def Add_data_file():
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Negative)"
             current_dir = Path(__file__).parent
             try:
-                PN_path = current_dir / "Pertussis data consolidation" / "PN.xlsx"  
-                merged_df = pd.read_excel(PN_path) 
+                PN_path = current_dir / "Pertussis data consolidation" / "PN.parquet"
+                merged_df = pd.read_parquet(PN_path) 
             except Exception as e:
                 merged_df = pd.DataFrame()
-                st.error(f"{str(e)}")
+                st.error(f"{str(e)}") 
             if not merged_df.empty:
                 match_row = merged_df[(merged_df['Neut#'] == user_input[14]) & (merged_df['WBC'] == user_input[22])]
                 
@@ -360,11 +360,11 @@ def Add_data_file():
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Health)"
             current_dir = Path(__file__).parent
             try:
-                PH_path = current_dir / "Pertussis data consolidation" / "PH.xlsx"  
-                merged_df = pd.read_excel(PH_path) 
+                PH_path = current_dir / "Pertussis data consolidation" / "PH.parquet"
+                merged_df = pd.read_parquet(PH_path)
             except Exception as e:
                 merged_df = pd.DataFrame()
-                st.error(f"{str(e)}")
+                st.error(f"{str(e)}") 
 
             if not merged_df.empty:
                 match_row = merged_df[(merged_df['Neut#'] == user_input[14]) & (merged_df['WBC'] == user_input[22])]
@@ -485,5 +485,4 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
-
 
