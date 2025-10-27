@@ -6,7 +6,7 @@ import streamlit as st
 from streamlit_option_menu import option_menu
 import pandas as pd
 from joblib import load
-from pathlib import Path 
+from pathlib import Path
 
 def Add_data_file():
     st.markdown('<span class="arrow">➤ Add data</span> <p class="font"></p>', unsafe_allow_html=True)
@@ -353,7 +353,7 @@ def Add_data_file():
         @st.dialog("Results Form")
         def predict_dialog():
             input_data = [user_input] 
-            prediction = model.predict(input_data) 
+            prediction = model_PH.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Health)"
             try:
                 PH_path = r"Pertussis data consolidation/PH.parquet"
@@ -481,6 +481,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
