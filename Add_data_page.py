@@ -110,8 +110,8 @@ def Add_data_file():
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
             
         try:
-            model_path = r"Pertussis data consolidation/PN_CatBoost_model.joblib"  
-            model = load(model_path)
+            model_path_PN = r"Pertussis data consolidation/PN_XGBoost_model.joblib"  
+            model_PN = load(model_path_PN)
         except Exception as e:
             model = None
             st.error(f"{str(e)}")
@@ -121,7 +121,7 @@ def Add_data_file():
         @st.dialog("Results Form")
         def predict_dialog():
             input_data = [user_input]
-            prediction = model.predict(input_data) 
+            prediction = model_PN.predict(input_data) 
             result = "Pertussis(Positive)" if prediction[0] == 1 else "Pertussis(Negative)"
             try:
                 PN_path =r"Pertussis data consolidation/PN.parquet"
@@ -340,7 +340,7 @@ def Add_data_file():
             st.write(df.to_html(classes='dataframe', index=False, escape=False), unsafe_allow_html=True)
                     
         try:
-            model_path_PH = r"Pertussis data consolidation/PH_XGBoost_model.joblib"  
+            model_path_PH = r"Pertussis data consolidation/PH_CatBoost_model.joblib"  
             model_PH = load(model_path_PH)
         except Exception as e:
             model_PH = None 
@@ -482,6 +482,7 @@ def Add_data_file():
             return df
         if st.session_state.show_interpretation:   
             st.markdown("<h4 style='color: rgb(0, 168, 193); font-size: 35px;'>Analysis of blood routine test indicators</h4>", unsafe_allow_html=True)
+
 
 
 
